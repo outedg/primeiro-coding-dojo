@@ -27,11 +27,16 @@ VINICIUS
 '''
 
 #ATRIBUIÇÕES
-# PEDRA: str = "pedra"
-# EMPATE: str = "empate"
-
-# def jokenpo(player: str, player2: str) -> str:
-#     return EMPATE
+PEDRA: str = "pedra"
+EMPATE: str = "empate"
+TESOURA: str = "tesoura"
+PAPEL: str = "papel"
+ 
+def jokenpo(player: str, player2: str) -> str:
+    return TESOURA
 
 # def test_inicial_empate() -> None:
 #     assert jokenpo(PEDRA, PEDRA) == EMPATE
+
+def tesoura_ganha_de_papel() -> None:
+    assert jokenpo(TESOURA, PAPEL) == TESOURA
