@@ -1,3 +1,4 @@
+import pytest
 '''
 DESAFIO
 O objetivo é fazer um juiz de Jokenpo
@@ -33,10 +34,16 @@ TESOURA: str = "tesoura"
 PAPEL: str = "papel"
  
 def jokenpo(player: str, player2: str) -> str:
-    return TESOURA
+    if(player == TESOURA and player2 == PAPEL):
+        return player2
+    return PAPEL
 
 # def test_inicial_empate() -> None:
 #     assert jokenpo(PEDRA, PEDRA) == EMPATE
 
-def tesoura_ganha_de_papel() -> None:
+
+def test_tesoura_ganha_de_papel() -> None:
     assert jokenpo(TESOURA, PAPEL) == TESOURA
+
+def test_papel_ganha_de_pedra() -> None:
+    assert jokenpo(PAPEL, PEDRA) == PAPEL
